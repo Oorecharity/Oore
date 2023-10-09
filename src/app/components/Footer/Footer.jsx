@@ -32,8 +32,8 @@ export const Footer = () => {
             {
               labels.map(({ id, linkName, link }) => {
                 return (
-                  <div key={id} className='lg:mt-12 mt-4'>
-                    <Link href="/" className='hover:text-green-400'>
+                  <div key={id} className='lg:mt-12 mt-6'>
+                    <Link href="" target='_blank' className='hover:text-green'>
                       {linkName}
                     </Link>
                   </div>
@@ -42,7 +42,7 @@ export const Footer = () => {
             }
           </div>
           <div className='mt-10'>
-            <Link href="" className="border-2 border-white px-6 py-2 bg-white rounded-md hover:border-green hover:bg-green text-black hover:text-white">Create an account</Link>
+            <Link href="/signup" className="border-2 border-white px-6 py-2 bg-white rounded-md hover:border-green hover:bg-green text-black hover:text-white">Create an account</Link>
           </div>
         </div>
       </div>

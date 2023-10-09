@@ -5,7 +5,7 @@ import frame from "./Frame 115.png"
 
 const About = () => {
   return (
-    <main>
+    <main id='about'>
       <div className='lg:grid grid-cols-2 gap-6 mt-8'>
         <div className='lg:p-24 p-8 lg:mb-0 mb-4'>
           <h2 className="font-semibold text-2xl lg:pb-10 pb-6 text-center lg:text-left">Know about us</h2>

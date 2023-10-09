@@ -19,8 +19,8 @@ const Projects = () => {
                                 alt='project'
                                 placeholder='blur'
                             />
-                            <div className='py-6 px-4 font-semibold border-2 border-l-2 rounded-b-lg text-center'>
-                                <p><small>{captions}</small></p>
+                            <div className='py-6 px-4 font-semibold border-2 border-l-2 rounded-b-lg text-center text-sm'>
+                                <p>{captions}</p>
                             </div>
                         </div>
                     )
