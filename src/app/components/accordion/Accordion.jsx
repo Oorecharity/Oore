@@ -30,7 +30,7 @@ const Accordion = () => {
                     return(
                         <div key={id}>
                             <AccordionItem title={title}>
-                                <div className='text-hues'>
+                                <div className='text-green'>
                                     {details}
                                 </div>
                             </AccordionItem>
