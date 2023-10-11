@@ -6,7 +6,7 @@ import "./login.css"
 const Login = () => {
   return (
     <div className="pt-24 mt-16 mb-16 login">
-      <div className="lg:grid grid-cols-2 w-[85%] m-auto">
+      <div className="lg:grid grid-cols-2 w-[85%] m-auto gap-4">
         <div>
           <div className="mb-16">
             <Image
