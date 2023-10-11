@@ -10,7 +10,7 @@ import logo from "./logo.png";
 export default function NavBar() {
   const [navbar, setNavbar] = useState(false);
 
-  const handleNavItemClick = () => setNavbar(false); // Close the navigation when a nav item is clicked
+  // const handleNavItemClick = () => setNavbar(false); // Close the navigation when a nav item is clicked
 
   const handleMobileMenuClick = () => {
     const mobileMenu = document.querySelector(".mobile-menu");
@@ -20,23 +20,23 @@ export default function NavBar() {
 
   return (
     <div className="fixed top-0 z-10 h-[12vh] w-[100%] opacity-90">
-      <div className="w-full py-5 flex flex-col items-between space-y-9 bg-black px-8 mx-auto text-slate-200">
+      <div className="w-full py-5 flex flex-col items-between space-y-9 bg-black lg:px-8 px-4 mx-auto text-slate-200">
         <nav className="flex items-center justify-between">
           <Link href="/">
             <Image src={logo} placeholder="blur" alt="logo" />
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="#about" className="hover:text-green" onClick={handleNavItemClick}>
+            <Link href="#about" className="hover:text-green" onClick={handleMobileMenuClick}>
               About Us
             </Link>
-            <Link href="#contact" className="hover:text-green" onClick={handleNavItemClick}>
+            <Link href="#contact" className="hover:text-green" onClick={handleMobileMenuClick}>
               Contact
             </Link>
-            <Link href="#faq" className="hover:text-green" onClick={handleNavItemClick}>
+            <Link href="#faq" className="hover:text-green" onClick={handleMobileMenuClick}>
               FAQs
             </Link>
-            <Link href="#blog" className="hover:text-green" onClick={handleNavItemClick}>
+            <Link href="#blog" className="hover:text-green" onClick={handleMobileMenuClick}>
               Blog
             </Link>
           </div>
@@ -44,14 +44,14 @@ export default function NavBar() {
             <Link
               href="/signup"
               className="border-2 border-white px-6 py-2 bg-white rounded-md hover:border-green hover-bg-green text-black"
-              onClick={handleNavItemClick}
+              onClick={handleMobileMenuClick}
             >
               Sign up
             </Link>
             <Link
               href="/login"
               className="border-2 border-white hover-border-green px-6 py-2 rounded-md hover-text-black hover-bg-green"
-              onClick={handleNavItemClick}
+              onClick={handleMobileMenuClick}
             >
               Sign in
             </Link>
@@ -71,29 +71,29 @@ export default function NavBar() {
           </button>
         </nav>
         <div className="mobile-menu hidden md:hidden flex flex-col items-end space-y-2 pt-3 pb-3 text-sm">
-          <Link href="#about" className="hover:text-green" onClick={handleNavItemClick}>
+          <Link href="#about" className="hover:text-green" onClick={handleMobileMenuClick}>
             About Us
           </Link>
-          <Link href="#contact" className="hover-text-green" onClick={handleNavItemClick}>
+          <Link href="#contact" className="hover-text-green" onClick={handleMobileMenuClick}>
             Contact
           </Link>
-          <Link href="#faq" className="hover-text-green" onClick={handleNavItemClick}>
+          <Link href="#faq" className="hover-text-green" onClick={handleMobileMenuClick}>
             FAQs
           </Link>
-          <Link href="#blog" className="hover-text-green" onClick={handleNavItemClick}>
+          <Link href="#blog" className="hover-text-green" onClick={handleMobileMenuClick}>
             Blog
           </Link>
           <Link
             href="/signup"
             className="border-2 border-white px-6 py-2 text-black bg-white rounded-md hover-border-green hover-bg-green hover-text-white"
-            onClick={handleNavItemClick}
+            onClick={handleMobileMenuClick}
           >
             Sign up
           </Link>
           <Link
             href="/login"
             className="border-2 border-white hover-border-green px-6 py-2 rounded-md hover-text-black hover-bg-green"
-            onClick={handleNavItemClick}
+            onClick={handleMobileMenuClick}
           >
             Sign in
           </Link>
