@@ -12,6 +12,7 @@ const Login = () => {
             <Image
               src={logo}
               placeholder="blur"
+              alt="boy"
             />
           </div>
           <div className="mt-8">

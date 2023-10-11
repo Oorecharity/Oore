@@ -5,6 +5,7 @@ import Image from "next/image"
 import logo from "../assets/Group 2.png"
 import "../login/login.css"
 import {country} from "../../../data"
+import Link from 'next/link';
 
 const Signup = () => {
 
@@ -21,10 +22,13 @@ const Signup = () => {
       <div className="w-[75%] m-auto">
         <div>
           <div className="mb-12">
-            <Image
-              src={logo}
-              placeholder="blur"
-            />
+            <Link href="/">
+              <Image
+                src={logo}
+                placeholder="blur"
+                alt='logo'
+              />
+            </Link>
           </div>
           <div className="mt-8">
             <h1 className="text-3xl font-bold text-left mb-8">Create Your account</h1>
