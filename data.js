@@ -118,8 +118,8 @@ export const accordion = [
 
     {
         id: 3,
-        title: 'Where does my 500Naira donation go?',
-        details: 'Your 500Naira donation goes directly to funding charitable projects of Oore, which include initiatives related to education, healthcare, clean water, disaster relief, and'
+        title: 'Where does my donations go?',
+        details: 'Your donation goes directly to funding charitable projects of Oore, which include initiatives related to education, healthcare, clean water, disaster relief, and'
     },
 
     {
@@ -131,12 +131,12 @@ export const accordion = [
     {
         id: 5,
         title: 'Can i choose which charity or project my donation supports?',
-        details: 'Over pools donations to maximize their impact. However, you can be rest assured that Oore diligently selects and oversees a variety of impactfulprojects to ensure that your 500naira has a positive effect'
+        details: 'Over pools of donations to maximize their impact. However, you can be rest assured that Oore diligently selects and oversees a variety of impactfulprojects to ensure that your donations have positive effects'
     },
 
     {
         id: 6,
-        title: 'How can I get involved with Oore beyond donating 500Naira?',
+        title: 'How can I get involved with Oore beyond donation?',
         details: 'Oore encourages active engagement! You can become a volunteer, participate in fundraising events, or even suggest charitable projects for consideration. Contact us for more information on getting involved.'
     },
 
@@ -148,13 +148,13 @@ export const accordion = [
 
     {
         id: 8,
-        title: 'Can i cancel my monthly 500Naira donation if needed?',
-        details: 'Your 500Naira donation goes directly to funding charitable projects of Oore, which include initiatives related to education, healthcare, clean water, disaster relief, and'
+        title: 'Can i cancel my monthly donation if needed?',
+        details: 'Your donation goes directly to funding charitable projects of Oore, which include initiatives related to education, healthcare, clean water, disaster relief, and'
     },
 
     {
         id: 9,
-        title: 'Is my 500Naira donation tex-deductible?',
+        title: 'Is my donation tex-deductible?',
         details: 'Oore is a registered NGO, and in mayny countries, donations to such organizations are tax deductible'
     },
 
@@ -167,7 +167,7 @@ export const accordion = [
     {
         id: 11,
         title: 'Do Oore accept international donations?',
-        details: 'Your 500Naira donation goes directly to funding charitable projects of Oore, which include initiatives related to education, healthcare, clean water, disaster relief, and'
+        details: 'Your donations goes directly to funding charitable projects of Oore, which include initiatives related to education, healthcare, clean water, disaster relief, and'
     },
 ]
 
