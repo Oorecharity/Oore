@@ -41,8 +41,8 @@ export default function NavBar() {
               </Link>
             </div>
             <div className="hidden md:flex items-center space-x-4">
-              <Link href="" className="border-2 border-white px-6 py-2 bg-white rounded-md hover:border-green hover:bg-green text-black">Sign up</Link>
-              <Link href="" className="border-2 border-white hover:border-green px-6 py-2 rounded-md hover:text-black hover:bg-green ">Sign in</Link>
+              <Link href="/signup" className="border-2 border-white px-6 py-2 bg-white rounded-md hover:border-green hover:bg-green text-black">Sign up</Link>
+              <Link href="/login" className="border-2 border-white hover:border-green px-6 py-2 rounded-md hover:text-black hover:bg-green ">Sign in</Link>
             </div>
             
             <button
