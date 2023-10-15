@@ -18,9 +18,9 @@ const Signup = () => {
   };
 
   return (
-    <div className="pt-24 mt-10 mb-16 login">
-      <div className="w-[75%] m-auto">
-        <div>
+    <div className="login bg-green py-16 lg:h-screen">
+      <div className="w-[85%] mx-auto bg-white p-8 rounded-md flex flex-col justify-center items-center">
+        <div className=''>
           <div className="mb-12">
             <Link href="/">
               <Image
@@ -32,7 +32,7 @@ const Signup = () => {
           </div>
           <div className="mt-8">
             <h1 className="text-3xl font-bold text-left mb-8">Create Your account</h1>
-            <div className="lg:grid grid-cols-2">
+            <div className="lg:grid grid-cols-2 gap-6">
               <form className="w-full max-w-md">
                 <input
                   type="text"
@@ -51,7 +51,7 @@ const Signup = () => {
                 />
 
                 <input
-                  type="phonenumber"
+                  type="tel"
                   id='phone'
                   name='phone'
                   placeholder="phone number"
@@ -89,7 +89,10 @@ const Signup = () => {
                   }
                 </select>
               </form>
-              <button type="submit" className="mt-8 block w-full max-w-md px-4 py-3 bg-black text-white rounded-md text-sm hover:font-semibold hover:text-black hover:bg-green">sign up</button>
+              <div className='mt-4'>
+                <p className='text-gray-500'>Already have an account? <span className='text-black hover:text-green transition all-ease duration-300'> <Link href="/login ">Login</Link></span></p>
+              </div>
+              <button type="submit" className="mt-4 block w-full max-w-md px-4 py-3 bg-black text-white rounded-md text-sm hover:font-semibold hover:bg-green transition all-ease duration-300">sign up</button>
             </div>
           </div>
         </div>

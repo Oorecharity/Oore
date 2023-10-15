@@ -10,7 +10,9 @@ import logo from "./logo.png";
 export default function NavBar() {
   const [navbar, setNavbar] = useState(false);
 
-  // const handleNavItemClick = () => setNavbar(false); // Close the navigation when a nav item is clicked
+  if (location.pathname === '/signup' || location.pathname === '/login') {
+    return null;
+  }
 
   const handleMobileMenuClick = () => {
     const mobileMenu = document.querySelector(".mobile-menu");

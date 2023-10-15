@@ -1,4 +1,6 @@
-import React from 'react'
+"use client"
+
+import { useState } from "react";
 import { labels } from '../../../../data'
 import { socials } from '../../../../data'
 // import { BsWhatsapp } from "react-icons/bs";
@@ -6,6 +8,9 @@ import { socials } from '../../../../data'
 import Link from 'next/link'
 
 export const Footer = () => {
+  if (location.pathname === '/signup' || location.pathname === '/login') {
+    return null;
+  }
   return (
     <main className="bg-green p-4 md:p-12 mt-8">
       <div className="bg-black text-white w-12/12 m-auto p-12 rounded-md">
