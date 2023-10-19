@@ -3,16 +3,12 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-
+import { useRouter } from "next/navigation";
 // logo
 import logo from "./logo.png";
 
 export default function NavBar() {
   const [navbar, setNavbar] = useState(false);
-
-  if (location.pathname === '/signup' || location.pathname === '/login') {
-    return null;
-  }
 
   const handleMobileMenuClick = () => {
     const mobileMenu = document.querySelector(".mobile-menu");

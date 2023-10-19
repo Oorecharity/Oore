@@ -1,13 +1,14 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
 import logo from "../assets/Group 2.png"
-import boy from "../assets/boy.jpg"
 import "./login.css"
 
 const Login = () => {
   return (
-    <div className="bg-green py-10 lg:h-screen">
-      <div className="w-[85%] mx-auto bg-white p-8 rounded-md lg:flex justify-evenly items-center lg:space-y-0 space-x-6">
+    <div className="bg-green py-24">
+      <div className="w-[85%] mx-auto bg-white p-16 rounded-md grid lg:grid-cols-2 grid-cols-1 gap-6">
         <div>
           <div className="mb-16">
             <Link href="/">
@@ -46,23 +47,17 @@ const Login = () => {
           </div>
         </div>
         <div>
-          <Image
-            src={boy}
-            placeholder="blur"
-            alt="boy"
-            height={500}
-            className="object-fill bg-blend-darken brightness-50 rounded-md "
-          />
-          <div className="absolute bottom-20 w-[30%] m-auto p-4">
-            <hr className="w-[20%] h-6 pb-2 border-green" />
-            <p className='text-[10px] text-center text-white'>Recent global estimates by UNICEF and partners indicate that at least 340 million children under 5 (one in two) suffer from hidden hunger. In the Western Africa UN sub-region 67% of children under 5 suffer from hidden hunger.</p>
-            <div className="flex items-right justify-end pt-2" >
-              <hr className="w-[20%] border-green" />
-            </div>
-          </div>
+        <div className="lg:w-[70%] m-auto p-4 img h-[29rem] rounded">
+          <div className="pt-64">
+              <hr className="w-[20%] h-6 pb-2 border-green" />
+              <p className='text-[10px] text-center text-white'>Recent global estimates by UNICEF and partners indicate that at least 340 million children under 5 (one in two) suffer from hidden hunger. In the Western Africa UN sub-region 67% of children under 5 suffer from hidden hunger.</p>
+              <div className="flex items-right justify-end pt-2" >
+                <hr className="w-[20%] border-green" />
+              </div>
+          </div>         
+        </div>
         </div>
       </div>
-
     </div>
   )
 }

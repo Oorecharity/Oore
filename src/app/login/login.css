@@ -4,3 +4,10 @@
     background-repeat: no-repeat;
     background-position: center;
 }
+
+.img{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url('../assets/boy.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
