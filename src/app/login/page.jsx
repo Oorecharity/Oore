@@ -11,17 +11,16 @@ const Login = () => {
       <div className="w-[85%] mx-auto bg-white p-16 rounded-md grid lg:grid-cols-2 grid-cols-1 gap-6">
         <div>
           <div className="mb-10">
-            <Link href="/">
+            <Link href="/" className="grid place-items-center">
               <Image
                 src={logo}
                 placeholder="blur"
                 alt="logo"
               />
             </Link>
-
+            <h1 className="text-2xl font-bold text-center pt-8">Login your account</h1>
           </div>
           <div className="mt-8">
-            <h1 className="text-3xl font-bold text-left mb-8">Login your account</h1>
             <form className="w-full max-w-md">
               <h1 className="text-center text-3xl font-bold"></h1>
 
