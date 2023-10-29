@@ -9,7 +9,7 @@ const Swiperbtn = () => {
     const handleSlideNext = () => swiper && swiper.slideNext();
 
     return (
-        <main className="swiper-nav-btn  z-15">
+        <main className="swiper-nav-btn  z-15" style={{marginTop:'40px'}}>
             <div className="right-0 relative flex space-x-6 pt-4 justify-center items-center">
                 <button onClick={handleSlidePrev} className="rounded-full bg-black p-3 text-white hover:bg-green">
                     <FaArrowLeft />

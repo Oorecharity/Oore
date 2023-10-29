@@ -24,7 +24,7 @@ export default function NavBar() {
             <Image src={logo} placeholder="blur" alt="logo" />
           </Link>
 
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-8 font-montserrat text-18 font-medium leading-22 tracking-normal text-left">
             <Link href="#about" className="hover:text-green" onClick={handleMobileMenuClick}>
               About Us
             </Link>
@@ -41,14 +41,14 @@ export default function NavBar() {
           <div className="hidden md:flex items-center space-x-4">
             <Link
               href="/signup"
-              className="border-2 border-white px-6 py-2 bg-white rounded-md hover:border-green hover-bg-green text-black"
+              className="border-2 border-none px-6 py-2 bg-green rounded-md hover:border-white hover-bg-green text-black"
               onClick={handleMobileMenuClick}
             >
               Sign up
             </Link>
             <Link
               href="/login"
-              className="border-2 border-white hover-border-green px-6 py-2 rounded-md hover-text-black hover-bg-green"
+              className="border-2 border-none bg-[#323232] hover-border-green px-6 py-2 rounded-md hover-text-black hover-bg-green"
               onClick={handleMobileMenuClick}
             >
               Sign in
@@ -83,14 +83,14 @@ export default function NavBar() {
           </Link>
           <Link
             href="/signup"
-            className="border-2 border-white px-6 py-2 text-black bg-white rounded-md hover-border-green hover-bg-green hover-text-white"
+            className="border-2 border-none px-6 py-2 text-black bg-green rounded-md hover-border-green hover-bg-green hover-text-white"
             onClick={handleMobileMenuClick}
           >
             Sign up
           </Link>
           <Link
             href="/login"
-            className="border-2 border-white hover-border-green px-6 py-2 rounded-md hover-text-black hover-bg-green"
+            className="border-2 border-none bg-[#323232] hover-border-green px-6 py-2 rounded-md hover-text-black hover-bg-green"
             onClick={handleMobileMenuClick}
           >
             Sign in

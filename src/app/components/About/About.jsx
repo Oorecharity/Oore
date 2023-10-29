@@ -5,8 +5,8 @@ import frame from "./Frame 115.png"
 
 const About = () => {
   return (
-    <main id='about'>
-      <div className='lg:grid grid-cols-2 gap-6 mt-8'>
+    <main id='about' className='lg:mt-[180px]'>
+      <div className='lg:grid grid-cols-2 gap-6 mt-8 mb-12'>
         <div className='lg:p-24 p-8 lg:mb-0 mb-4'>
           <h2 className="font-semibold text-2xl lg:pb-10 pb-6 text-center lg:text-left">Know about us</h2>
           <p className='text-center lg:text-left text-hues'>Oore aims to develop versatile donation platform that allows donors to contribute to the cause of our charity with flexibility and convenience. The primary focus is on enabling donors to spread their donations across a period of time, offering them greater financial ease while making a lasting impact on our charity mission. This technology specification outlines the key features, functionalities and requirements of the platform.</p>

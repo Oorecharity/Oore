@@ -3,7 +3,7 @@ import Teamswiper from './Teamswiper'
 
 export const Team = () => {
   return (
-    <main>
+    <main style={{marginTop:'90px', marginBottom:'120px'}}>
       <div className='text-2xl font-bold w-10/12 mx-auto mt-16 mb-10'>
         <h1>Meet The Team</h1>
       </div>
