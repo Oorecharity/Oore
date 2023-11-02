@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from "next/image";
 import logo from "../assets/Group 2.png";
 import { country } from "../../../data";
@@ -35,6 +35,24 @@ const Signup = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
 
+    // Clear error messages
+    setErrorMessages({
+      username: "",
+      password: "",
+      phone: "",
+      email: "",
+      confirmPassword: "",
+    });
+
+    // Check if the password and confirm password match
+    if (inputFields.password !== inputFields.confirmPassword) {
+      setErrorMessages({
+        ...errorMessages,
+        confirmPassword: "Password does not match",
+      });
+      return; // Stop form submission if passwords don't match
+    }
+
     // Backend URL for registration
     const backendUrl = "https://api.ooreafrica.org/register"; // Replace with the actual backend URL
 
@@ -54,15 +72,6 @@ const Signup = () => {
 
         // Clear input fields after successful submission
         setInputFields({
-          username: "",
-          password: "",
-          phone: "",
-          email: "",
-          confirmPassword: "",
-        });
-
-        // Clear error messages
-        setErrorMessages({
           username: "",
           password: "",
           phone: "",
@@ -92,13 +101,22 @@ const Signup = () => {
       ...inputFields,
       [name]: value,
     });
-
-    // Clear the associated error message when the input changes
-    setErrorMessages({
-      ...errorMessages,
-      [name]: "",
-    });
   };
+
+  useEffect(() => {
+    // Check if the password and confirm password match
+    if (inputFields.password !== inputFields.confirmPassword) {
+      setErrorMessages({
+        ...errorMessages,
+        confirmPassword: "Password does not match",
+      });
+    } else {
+      setErrorMessages({
+        ...errorMessages,
+        confirmPassword: "",
+      });
+    }
+  }, [inputFields.password, inputFields.confirmPassword]);
 
   return (
     <div className="login py-16">
@@ -190,7 +208,7 @@ const Signup = () => {
             </div>
             <div className='grid place-items-center mt-8'>
               <button type="submit" className="mt-4 block w-full max-w-md px-4 py-3 bg-green rounded-md text-sm hover:font-semibold transition all-ease duration-300">Sign up</button>
-              <p className='text-gray-500 pt-6'>Already have an account? <span className='text-black hover:text-green transition all-ease duration-300'> <Link href="/login">Login</Link></span></p>
+              <p className='text-gray-500 pt-6'>Already have an account? <span className='text-black hover:text-green transition all-ease duration-300'> <Link href="/login ">Login</Link></span></p>
             </div>
           </div>
         </div>
