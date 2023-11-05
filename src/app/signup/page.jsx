@@ -50,7 +50,7 @@ const Signup = () => {
         ...errorMessages,
         confirmPassword: "Password does not match",
       });
-      return; // Stop form submission if passwords don't match
+      return; 
     }
 
     // Backend URL for registration
@@ -68,7 +68,7 @@ const Signup = () => {
 
       if (response.ok) {
         // Handle success, e.g., redirect to a new page
-        window.location.href = "/dashboard"; // Replace with the actual dashboard URL
+        window.location.href = "/dashboard"; 
 
         // Clear input fields after successful submission
         setInputFields({
@@ -155,7 +155,7 @@ const Signup = () => {
                   value={inputFields.password}
                   onChange={handleInputChange}
                 />
-                <span className="text-red-500">{errorMessages.password}</span>
+                {/* <span className="text-red-500">{errorMessages.password}</span> */}
 
                 <input
                   type="tel"
