@@ -23,7 +23,7 @@ const Login = () => {
     e.preventDefault();
 
     // Backend URL for login
-    const backendUrl = "https://api.ooreafrica.org/login"; // Replace with the actual backend URL
+    const backendUrl = "https://api.ooreafrica.org/login"; 
 
     // Form data
     const formData = new FormData(e.target);
@@ -37,8 +37,7 @@ const Login = () => {
 
       if (response.ok) {
         // Handle success, e.g., redirect to a new page
-        window.location.href = "/dashboard"; // Replace with the actual dashboard URL
-
+        window.location.href = "/dashboard"; 
         // Clear input fields after successful login
         setLoginCredentials({
           email: "",
