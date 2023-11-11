@@ -57,7 +57,15 @@ const Signup = () => {
     const backendUrl = "https://api.ooreafrica.org/register"; // Replace with the actual backend URL
 
     // Form data
-    const formData = new FormData(e.target);
+    const formData = new FormData();
+    
+    // Append form fields to FormData
+    formData.append("username", inputFields.username);
+    formData.append("password", inputFields.password);
+    formData.append("phone", inputFields.phone);
+    formData.append("email", inputFields.email);
+    formData.append("confirmPassword", inputFields.confirmPassword);
+    formData.append("country", selectedCountry);
 
     try {
       // Send a POST request to the backend
@@ -134,7 +142,7 @@ const Signup = () => {
           </div>
           <div className="mt-8">
             <div className="lg:grid grid-cols-2 gap-6">
-              <form className="w-full max-w-md" onSubmit={handleSignup}>
+              <form className="w-full max-w-md">
                 <input
                   type="text"
                   placeholder="Username"
@@ -207,7 +215,7 @@ const Signup = () => {
               </form>
             </div>
             <div className='grid place-items-center mt-8'>
-              <button type="submit" className="mt-4 block w-full max-w-md px-4 py-3 bg-green rounded-md text-sm hover:font-semibold transition all-ease duration-300">Sign up</button>
+              <button onClick={handleSignup} className="mt-4 block w-full max-w-md px-4 py-3 bg-green rounded-md text-sm hover:font-semibold transition all-ease duration-300">Sign up</button>
               <p className='text-gray-500 pt-6'>Already have an account? <span className='text-black hover:text-green transition all-ease duration-300'> <Link href="/login ">Login</Link></span></p>
             </div>
           </div>
