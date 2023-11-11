@@ -19,9 +19,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={montserrat.className}>
-        {router.pathname == "/dashboard" && <Navbar/>}
-          {children}
-        {router.pathname == "/dashboard" && <Footer />}
+        <Navbar/>
+        {children}
+        <Footer/>
       </body>
     </html>
   )
