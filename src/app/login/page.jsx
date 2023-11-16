@@ -1,68 +1,29 @@
 "use client"
 
 import React, { useState } from 'react';
-import Image from "next/image";
-import logo from "../assets/Group 2.png";
+import Image from 'next/image';
+import logo from '../assets/Group 2.png';
 import Link from 'next/link';
+import axios from 'axios';
 
 const Login = () => {
   // State to store login credentials and clear input fields
   const [loginCredentials, setLoginCredentials] = useState({
-    email: "",
-    password: "",
+    email: '',
+    password: '',
   });
 
   // State to store error messages
   const [errorMessages, setErrorMessages] = useState({
-    email: "",
-    password: "",
+    email: '',
+    password: '',
   });
 
-  // Function to handle the form submission
-  const handleLogin = async (e) => {
-    e.preventDefault();
+  const [buttonText, setButtonText] = useState('Sign in');
+  const [buttonDisabled, setButtonDisabled] = useState(false);
 
-    // Backend URL for login
-    const backendUrl = "https://api.ooreafrica.org/login"; 
 
-    // Form data
-    const formData = new FormData(e.target);
-
-    try {
-      // Send a POST request to the backend
-      const response = await fetch(backendUrl, {
-        method: "POST",
-        body: formData,
-      });
-
-      if (response.ok) {
-        // Handle success, e.g., redirect to a new page
-        window.location.href = "/dashboard"; 
-        // Clear input fields after successful login
-        setLoginCredentials({
-          email: "",
-          password: "",
-        });
-
-        // Clear error messages
-        setErrorMessages({
-          email: "",
-          password: "",
-        });
-      } else {
-        // Handle errors, e.g., show an error message
-        const errorData = await response.json();
-        setErrorMessages({
-          email: errorData.email || "",
-          password: errorData.password || "",
-        });
-      }
-    } catch (error) {
-      console.error("An error occurred:", error);
-    }
-  };
-
-  // Function to update login credentials
+  // Function to handle input changes
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setLoginCredentials({
@@ -73,8 +34,57 @@ const Login = () => {
     // Clear the associated error message when the input changes
     setErrorMessages({
       ...errorMessages,
-      [name]: "",
+      [name]: '',
     });
+  };
+
+  // Function to handle the form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setButtonDisabled(true);
+    setButtonText('Logging in...');
+
+    const { email, password } = loginCredentials;
+
+    const LOGIN_URL = 'https://ooreafrica.org/login';
+
+    try {
+      const response = await axios.post(
+        LOGIN_URL,
+        { email, password },
+        {
+          headers: { 'Content-Type': 'application/json' },
+        }
+      );
+
+      const token = response?.data?.token;
+      localStorage.setItem('bearerToken', token);
+      localStorage.setItem('email', email);
+      localStorage.setItem('password', password);
+
+      setLoginCredentials({
+        email: '',
+        password: '',
+      });
+
+      setButtonDisabled(false);
+      setButtonText('Sign in');
+
+      window.location.href = "/dashboard";
+    } catch (err) {
+      setButtonDisabled(false);
+      setButtonText('Sign in');
+
+      if (!err?.response) {
+        setErrorMessages({ email: 'No server response', password: '' });
+      } else if (err.response?.status === 400) {
+        setErrorMessages({ email: 'Missing Username', password: 'or Password' });
+      } else if (err.response?.status === 401) {
+        setErrorMessages({ email: err.response.data.errors.message, password: '' });
+      } else {
+        setErrorMessages({ email: 'Login Failed', password: '' });
+      }
+    }
   };
 
   return (
@@ -83,16 +93,12 @@ const Login = () => {
         <div>
           <div className="mb-10">
             <Link href="/" className="grid place-items-center">
-              <Image
-                src={logo}
-                placeholder="blur"
-                alt="logo"
-              />
+              <Image src={logo} placeholder="blur" alt="logo" />
             </Link>
             <h1 className="text-2xl font-bold text-center pt-8">Login your account</h1>
           </div>
           <div className="mt-8">
-            <form className="w-full max-w-md" onSubmit={handleLogin}>
+            <form className="w-full max-w-md" onSubmit={handleSubmit}>
               <input
                 type="text"
                 name="email"
@@ -115,8 +121,18 @@ const Login = () => {
               />
               <span className="text-red-500">{errorMessages.password}</span>
 
-              <button type="submit" className="mt-8 block w-full px-4 py-3 rounded-md text-sm hover:font-semibold bg-green hover:bg-green-600 transition all-ease duration-300 font-semibold">sign in</button>
-              <button type="submit" className="mt-8 block w-full px-4 bg-gray-300 py-3 border border-gray-300 rounded-md text-sm font-semibold hover:bg-green transition all-ease duration-300">sign up</button>
+              <button
+                type="submit"
+                className="mt-8 block w-full px-4 py-3 rounded-md text-sm hover:font-semibold bg-green hover:bg-green-600 transition all-ease duration-300 font-semibold"
+                disabled={buttonDisabled}
+              >
+                {buttonText}
+              </button>
+              <a
+                className="mt-8 block w-full px-4 bg-gray-300 py-3 border no-underline text-center border-gray-300 rounded-md text-sm font-semibold hover:bg-green transition all-ease duration-300"
+              >
+                sign up
+              </a>
 
               <div className="text-center gray-300 text-sm mt-8">
                 <Link href="/">forgot password?</Link>
@@ -127,14 +143,17 @@ const Login = () => {
         <div>
           <div className="lg:w-[75%] m-auto p-8 img h-[33rem] rounded">
             <div className="pt-[22rem]">
-              <p className='text-[10px] text-center text-white'>Recent global estimates by UNICEF and partners indicate that at least 340 million children under 5 (one in two) suffer from hidden hunger. In the Western Africa UN sub-region 67% of children under 5 suffer from hidden hunger.</p>
+              <p className="text-[10px] text-center text-white">
+                Recent global estimates by UNICEF and partners indicate that at least 340 million
+                children under 5 (one in two) suffer from hidden hunger. In the Western Africa UN
+                sub-region 67% of children under 5 suffer from hidden hunger.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Login;
-
