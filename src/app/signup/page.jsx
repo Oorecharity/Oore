@@ -217,7 +217,7 @@ const Signup = () => {
             <div className='grid place-items-center mt-8'>
               <button onClick={handleSignup} className="mt-4 block w-full max-w-md px-4 py-3 bg-green rounded-md text-sm hover:font-semibold transition all-ease duration-300">Sign up</button>
               <p className='text-gray-500 pt-6'>Already have an account? <span className='text-black hover:text-green transition all-ease duration-300'> <Link href="/login ">Login</Link></span></p>
-            </div>
+            </div> 
           </div>
         </div>
       </div>
