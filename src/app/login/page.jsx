@@ -46,7 +46,7 @@ const Login = () => {
 
     const { email, password } = loginCredentials;
 
-    const LOGIN_URL = 'https://ooreafrica.org/login';
+    const LOGIN_URL = 'https://api.ooreafrica.org/login';
 
     try {
       const response = await axios.post(
