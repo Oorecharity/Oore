@@ -76,7 +76,7 @@ const Signup = () => {
 
       if (response.ok) {
         // Handle success, e.g., redirect to a new page
-        window.location.href = "/dashboard"; 
+        // window.location.href = "/dashboard"; 
 
         // Clear input fields after successful submission
         setInputFields({

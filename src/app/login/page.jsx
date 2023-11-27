@@ -70,7 +70,7 @@ const Login = () => {
       setButtonDisabled(false);
       setButtonText('Sign in');
 
-      window.location.href = "/dashboard";
+      // window.location.href = "/dashboard";
     } catch (err) {
       setButtonDisabled(false);
       setButtonText('Sign in');
