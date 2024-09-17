@@ -44,7 +44,7 @@ export const Footer = () => {
             }
           </div>
           <div className='mt-10'>
-            <Link href="/signup" className="border-2 border-white px-6 py-2 bg-white rounded-md hover:border-green hover:bg-green text-black hover:text-white">Create an account</Link>
+            <Link href="dashboard.ooreafrica.org/signup" className="border-2 border-white px-6 py-2 bg-white rounded-md hover:border-green hover:bg-green text-black hover:text-white">Create an account</Link>
           </div>
         </div>
       </div>
